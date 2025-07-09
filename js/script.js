@@ -43,7 +43,8 @@ let contador = 0;
       const historico = dados[0].data;
       const labels = historico.map(d => d.timestamp.split("T")[0]);
       const avgPrices = historico.map(d => d.avg_price);
-      const maxPrices = historico.map(d => d.max_price);
+      const ultimoPreco = avgPrices[avgPrices.length - 1];
+      
 
       const cardId = `grafico-${contador++}`;
       const iconUrl = `https://render.albiononline.com/v1/item/${itemId}.png`;
@@ -65,16 +66,9 @@ let contador = 0;
           labels,
           datasets: [
             {
-              label: 'Preço Médio',
+              label: 'Preço Médio — Último: ¥ ' + ultimoPreco.toLocaleString(),
               data: avgPrices,
               borderColor: 'green',
-              fill: false,
-              tension: 0.2
-            },
-            {
-              label: 'Preço Máximo',
-              data: maxPrices,
-              borderColor: 'red',
               fill: false,
               tension: 0.2
             }

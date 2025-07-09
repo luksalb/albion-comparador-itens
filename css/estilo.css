@@ -1,6 +1,22 @@
 * {
       box-sizing: border-box;
     }
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+    }
 
     body {
       margin: 0;
@@ -16,6 +32,21 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+    }
+
+    .github-btn {
+      background-color: #a03024;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      border: 1px solid #fff1;
+      transition: background-color 0.2s;
+    }
+
+    .github-btn:hover {
+      background-color: #7f241b;
     }
 
     header h1 {
@@ -62,10 +93,13 @@
     }
 
     .chart-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+      justify-items: center;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 10px;
     }
 
     .card {
@@ -73,7 +107,8 @@
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       padding: 20px;
-      width: 440px;
+      width: 100%;
+      max-width: 320px;
       text-align: center;
       border: 1px solid #ddd;
     }
@@ -111,6 +146,24 @@
 
     .remove-btn:hover {
       background-color: #333;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      color: #666;
+      font-size: 14px;
+      background-color: #f0ede8;
+      border-top: 1px solid #ddd;
+    }
+
+    footer a {
+      color: #a03024;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 500px) {
