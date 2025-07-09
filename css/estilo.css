@@ -254,6 +254,41 @@
       color: white;
       border: 1px solid #666;
     }
+    .input-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .todas-cidades-btn {
+      background-color: #a03024;
+      color: white;
+      padding: 10px 14px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .todas-cidades-btn:hover {
+      background-color: #7f241b;
+    }
+
+    body.dark-mode .todas-cidades-btn {
+      background-color: #a03024;
+      color: white;
+      border: 1px solid #666;
+    }
 
     @media (max-width: 500px) {
       .card {

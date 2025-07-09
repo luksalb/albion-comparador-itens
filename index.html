@@ -23,20 +23,24 @@
     </header>
     <main>
       <div class="controls">
-        <input type="text" id="itemInput" list="itemList" placeholder="Digite o nome do item..." autocomplete="off" />
-        <datalist id="itemList"></datalist>
-        <br/>
-        <select id="citySelect">
-          <option value="Caerleon">Caerleon</option>
-          <option value="Martlock">Martlock</option>
-          <option value="Lymhurst">Lymhurst</option>
-          <option value="Bridgewatch">Bridgewatch</option>
-          <option value="Fort Sterling">Fort Sterling</option>
-          <option value="Thetford">Thetford</option>
-        </select>
-        <button onclick="adicionarGrafico()">Adicionar</button>
-        <button onclick="removerTodos()" class="remove-all-btn">Remover Todos</button>
-      </div>
+  <div class="input-row">
+    <input type="text" id="itemInput" list="itemList" placeholder="Digite o nome do item..." autocomplete="off" />
+    <select id="citySelect">
+      <option value="Caerleon">Caerleon</option>
+      <option value="Martlock">Martlock</option>
+      <option value="Lymhurst">Lymhurst</option>
+      <option value="Bridgewatch">Bridgewatch</option>
+      <option value="Fort Sterling">Fort Sterling</option>
+      <option value="Thetford">Thetford</option>
+    </select>
+    <datalist id="itemList"></datalist>
+  </div>
+  <div class="button-row">
+    <button onclick="adicionarGrafico()">Adicionar</button>
+    <button onclick="adicionarTodasCidades()">Todas Cidades</button>
+    <button onclick="removerTodos()" class="remove-all-btn">Remover Todos</button>
+</div>
+</div>
       <div id="graficos" class="chart-container"></div>
   </main>
 </div>
