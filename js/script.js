@@ -126,3 +126,8 @@ let contador = 0;
     const botao = document.querySelector('.tema-btn');
     botao.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
   }
+
+  function removerTodos() {
+  const container = document.getElementById('graficos');
+  container.innerHTML = '';
+}
