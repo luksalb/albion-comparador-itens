@@ -44,8 +44,18 @@ let contador = 0;
       const labels = historico.map(d => d.timestamp.split("T")[0]);
       const avgPrices = historico.map(d => d.avg_price);
       const ultimoPreco = avgPrices[avgPrices.length - 1];
+      const penultimoPreco = avgPrices[avgPrices.length - 2];
       
-
+      // Calcular variação percentual
+      let variacao = 0;
+      let variacaoTexto = '';
+        if (penultimoPreco && penultimoPreco > 0) {
+          variacao = ((ultimoPreco - penultimoPreco) / penultimoPreco) * 100;
+          const direcao = variacao >= 0 ? '🔺' : '🔻';
+          const cor = variacao >= 0 ? 'green' : 'red';
+          variacaoTexto = `<span style="color:${cor}; font-weight:500;">${direcao} ${variacao.toFixed(2)}%</span>`;
+        }
+      
       const cardId = `grafico-${contador++}`;
       const iconUrl = `https://render.albiononline.com/v1/item/${itemId}.png`;
 
@@ -54,6 +64,7 @@ let contador = 0;
       card.innerHTML = `
         <img src="${iconUrl}" class="item-icon" alt="${nomeInput}" />
         <h3>${nomeInput} - ${cidade}</h3>
+        <p style="margin: 0 0 10px 0; font-size: 14px;">Variação diária: ${variacaoTexto}</p>
         <canvas id="${cardId}" width="400" height="250"></canvas>
         <button class="remove-btn" onclick="this.parentElement.remove()">Remover</button>
       `;
@@ -92,3 +103,7 @@ let contador = 0;
     }
 
     carregarItens();
+
+    function alternarTema() {
+      document.body.classList.toggle('dark-mode');
+    }

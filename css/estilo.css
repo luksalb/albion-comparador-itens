@@ -32,8 +32,20 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
     }
 
+    .header-left h1 {
+      font-size: 22px;
+      margin: 0;
+    }
+
+    .header-right {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    
     .github-btn {
       background-color: #a03024;
       color: white;
@@ -59,7 +71,18 @@
       margin: 40px auto;
       padding: 0 20px;
     }
-
+    .tema-btn {
+      background: #fff1;
+      color: white;
+      border: 1px solid #fff2;
+      border-radius: 6px;
+      padding: 6px 10px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .tema-btn:hover {
+      background: #fff2;
+    }
     .controls {
       text-align: center;
       margin-bottom: 40px;
@@ -164,6 +187,39 @@
 
     footer a:hover {
       text-decoration: underline;
+    }
+
+    body.dark-mode {
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+    }
+
+    body.dark-mode .card {
+      background: #2a2a2a;
+      border-color: #444;
+    }
+
+    body.dark-mode header {
+      background-color: #2a0000;
+    }
+
+    body.dark-mode .controls input,
+    body.dark-mode .controls select {
+      background: #333;
+      color: white;
+      border: 1px solid #666;
+    }
+
+    body.dark-mode .controls button,
+    body.dark-mode .github-btn {
+      background-color: #a03024;
+      color: white;
+      border: 1px solid #666;
+    }
+
+    body.dark-mode footer {
+      background-color: #111;
+      color: #aaa;
     }
 
     @media (max-width: 500px) {
