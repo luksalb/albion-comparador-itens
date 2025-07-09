@@ -1,0 +1,120 @@
+* {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Noto Sans', sans-serif;
+      background-color: #f8f6f2;
+      color: #333;
+    }
+
+    header {
+      background-color: #4d0f00;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .controls {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .controls input,
+    .controls select,
+    .controls button {
+      padding: 10px 12px;
+      font-size: 16px;
+      margin: 6px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .controls input,
+    .controls select {
+      background: #fff;
+      color: #333;
+    }
+
+    .controls button {
+      background-color: #a03024;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .controls button:hover {
+      background-color: #7f241b;
+    }
+
+    .chart-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 440px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    .card h3 {
+      color: #a03024;
+      font-size: 18px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+
+    .item-icon {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      background-color: #f0f0f0;
+    }
+
+    canvas {
+      margin-top: 10px;
+      max-width: 100%;
+    }
+
+    .remove-btn {
+      margin-top: 15px;
+      background-color: #555;
+      color: white;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .remove-btn:hover {
+      background-color: #333;
+    }
+
+    @media (max-width: 500px) {
+      .card {
+        width: 100%;
+      }
+    }

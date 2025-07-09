@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Comparador de Itens - Albion Online</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css" />
+</head>
+<body>
+  <header>
+    <h1>Albion Online - Comparador de Itens</h1>
+  </header>
+
+  <main>
+    <div class="controls">
+      <input type="text" id="itemInput" list="itemList" placeholder="Digite o nome do item..." autocomplete="off" />
+      <datalist id="itemList"></datalist>
+      <br/>
+      <select id="citySelect">
+        <option value="Caerleon">Caerleon</option>
+        <option value="Martlock">Martlock</option>
+        <option value="Lymhurst">Lymhurst</option>
+        <option value="Bridgewatch">Bridgewatch</option>
+        <option value="Fort Sterling">Fort Sterling</option>
+        <option value="Thetford">Thetford</option>
+      </select>
+      <button onclick="adicionarGrafico()">Adicionar</button>
+    </div>
+
+    <div id="graficos" class="chart-container"></div>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+</html>
