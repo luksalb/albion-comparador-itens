@@ -116,7 +116,7 @@ let contador = 0;
         }
       });
 
-      document.getElementById('itemInput').value = '';
+      // document.getElementById('itemInput').value = '';
     }
 
     carregarItens();
