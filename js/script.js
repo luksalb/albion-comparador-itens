@@ -21,6 +21,23 @@ let contador = 0;
       });
     }
 
+    async function buscarPreco() {
+    const itemInput = document.getElementById("item").value;
+    const cidade = document.getElementById("cidade").value;
+
+    if (!itemInput || !cidade) return;
+
+    salvarHistorico(itemInput);
+
+    const url = `https://west.albion-online-data.com/api/v2/stats/history/${itemInput}?locations=${cidade}&time-scale=24`;
+    const response = await fetch(url);
+    const historico = await response.json();
+
+    if (!historico.length) return alert("Sem dados para esse item.");
+
+    adicionarGrafico(itemInput, cidade, historico);
+  }
+
     async function adicionarGrafico() {
       const nomeInput = document.getElementById('itemInput').value.trim();
       const cidade = document.getElementById('citySelect').value;
@@ -104,6 +121,8 @@ let contador = 0;
 
     carregarItens();
 
-    function alternarTema() {
-      document.body.classList.toggle('dark-mode');
-    }
+  function alternarTema() {
+    document.body.classList.toggle('dark-mode');
+    const botao = document.querySelector('.tema-btn');
+    botao.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+  }
