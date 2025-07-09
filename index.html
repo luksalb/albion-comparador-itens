@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" href="img/icon.png" type="image/x-icon">
-  <title>Albion Itens</title>
+  <title>Albion Compare</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/estilo.css" />
@@ -15,38 +15,65 @@
         <h1>Albion Compare</h1>
       </div>
       <div class="header-right">
-        <a href="https://github.com/luksalb/albion-comparador-itens" target="_blank" class="github-btn">
-          Ver no GitHub
-        </a>
-        <button onclick="alternarTema()" class="tema-btn">🌙</button>
+        <a href="https://github.com/luksalb/albion-comparador-itens" target="_blank" class="github-btn">Ver no GitHub</a>
+        <button onclick="alternarTema()" class="tema-btn">🌙 Dark Mode</button>
       </div>
     </header>
-    <main>
+
+    <!-- Navegação entre abas -->
+    <nav class="tabs">
+      <button onclick="mostrarAba('comparador')" class="tab-btn active">📊 Comparador</button>
+      <button onclick="mostrarAba('ranking')" class="tab-btn">📈 Ranking 24h</button>
+    </nav>
+
+    <!-- Aba: Comparador -->
+    <section id="comparador" class="aba ativa">
       <div class="controls">
-  <div class="input-row">
-    <input type="text" id="itemInput" list="itemList" placeholder="Digite o nome do item..." autocomplete="off" />
-    <select id="citySelect">
-      <option value="Caerleon">Caerleon</option>
-      <option value="Martlock">Martlock</option>
-      <option value="Lymhurst">Lymhurst</option>
-      <option value="Bridgewatch">Bridgewatch</option>
-      <option value="Fort Sterling">Fort Sterling</option>
-      <option value="Thetford">Thetford</option>
-    </select>
-    <datalist id="itemList"></datalist>
-  </div>
-  <div class="button-row">
-    <button onclick="adicionarGrafico()">Adicionar</button>
-    <button onclick="adicionarTodasCidades()">Todas Cidades</button>
-    <button onclick="removerTodos()" class="remove-all-btn">Remover Todos</button>
-</div>
-</div>
+        <input type="text" id="itemInput" list="itemList" placeholder="Digite o nome do item..." autocomplete="off" />
+        <datalist id="itemList"></datalist>
+        <br/>
+        <select id="citySelect">
+          <option value="Caerleon">Caerleon</option>
+          <option value="Martlock">Martlock</option>
+          <option value="Lymhurst">Lymhurst</option>
+          <option value="Bridgewatch">Bridgewatch</option>
+          <option value="Fort Sterling">Fort Sterling</option>
+          <option value="Thetford">Thetford</option>
+        </select>
+        <div class="btn-wrapper">
+        <button onclick="adicionarGrafico()">Adicionar</button>
+        <button onclick="adicionarTodasCidades()">Todas Cidades</button>
+        <button onclick="removerTodos()" class="remove-all-btn">Remover Todos</button>
+      </div>
+      </div>
+
       <div id="graficos" class="chart-container"></div>
-  </main>
-</div>
-    <footer>
-      <p>Feito por <a href="https://github.com/luksalb" target="_blank">luksalb</a> • Albion Compare © 2025</p>
-    </footer>
+    </section>
+
+    <!-- Aba: Ranking -->
+    <section id="ranking" class="aba">
+      <div class="ranking-container">
+        <h2>📈 Maiores variações de preço (últimas 24h)</h2>
+        <p class="loading">Carregando dados...</p>
+        <table id="ranking-tabela">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Cidade</th>
+              <th>Preço</th>
+              <th>Variação</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>Feito por <a href="https://github.com/luksalb" target="_blank">luksalb</a> • Albion Compare © 2025</p>
+  </footer>
+
   <script src="js/script.js"></script>
 </body>
 </html>

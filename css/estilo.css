@@ -94,9 +94,34 @@
       color: white;
       border: 1px solid #666;
     }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0 30px;
+    }
+
+    .tab-btn {
+      padding: 8px 16px;
+      background-color: #ddd;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .tab-btn.active {
+      background-color: #a03024;
+      color: white;
+    }
+
     .controls {
-      text-align: center;
-      margin-bottom: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
     }
 
     .controls input,
@@ -107,6 +132,7 @@
       margin: 6px;
       border-radius: 6px;
       border: 1px solid #ccc;
+      min-width: 150px;
     }
 
     .controls input,
@@ -125,6 +151,15 @@
     .controls button:hover {
       background-color: #7f241b;
     }
+    
+    .btn-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 15px;
+}
+
 
     .chart-container {
       display: grid;
@@ -289,6 +324,72 @@
       color: white;
       border: 1px solid #666;
     }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .tab-btn {
+      padding: 10px 16px;
+      background: #a03024;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .tab-btn:hover {
+      background: #7f241b;
+    }
+
+    .tab-btn.active {
+      background: #4d0f00;
+    }
+
+    .aba {
+      display: none;
+    }
+
+    .aba.ativa {
+      display: block;
+    }
+
+    .ranking-container {
+      margin-top: 40px;
+    }
+
+    #ranking-tabela {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    #ranking-tabela th,
+    #ranking-tabela td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+
+    #ranking-tabela th {
+      background: #eee;
+    }
+
+    body.dark-mode #ranking-tabela th {
+      background: #444;
+      color: white;
+    }
+
+    body.dark-mode #ranking-tabela td {
+      background: #2a2a2a;
+      color: white;
+    }
+
 
     @media (max-width: 500px) {
       .card {
